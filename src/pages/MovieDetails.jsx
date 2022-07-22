@@ -18,17 +18,22 @@ const MovieDetails = () => {
         const movieData = await API.fetchMovieById(movieId);
         setMovieDetails(movieData);
       } catch (error) {
-      } 
-      finally {setIsLoading(false)}
+      } finally {
+        setIsLoading(false);
+      }
     }
     getMoviesByid();
-
   }, [movieId]);
+
+  if (!movieDetails) {
+    return null;
+  }
 
   return (
     <main>
       {isLoading && <Loader />}
-      {movieDetails && <CardMovieInfo movieDetails={movieDetails} />}
+      <CardMovieInfo movieDetails={movieDetails} />
+      {/* {movieDetails && <CardMovieInfo movieDetails={movieDetails} />} */}
     </main>
   );
 };
