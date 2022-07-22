@@ -39,18 +39,20 @@ const MovieList = () => {
     <div>
       <SearchMovieBox onSearhSubmit={onSubmit} />
       {isLoading && <Loader />}
-      <StyledGallery>
-        {foundMovies.map(({ id, original_title, poster_path }) => {
-          return (
-            <MovieGalleryItem
-              key={id}
-              title={original_title}
-              id={id}
-              poster={poster_path}
-            />
-          );
-        })}
-      </StyledGallery>
+      {foundMovies.length > 0 && (
+        <StyledGallery>
+          {foundMovies.map(({ id, original_title, poster_path }) => {
+            return (
+              <MovieGalleryItem
+                key={id}
+                title={original_title}
+                id={id}
+                poster={poster_path}
+              />
+            );
+          })}
+        </StyledGallery>
+      )}
     </div>
   );
 };
