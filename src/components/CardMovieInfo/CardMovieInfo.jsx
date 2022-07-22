@@ -1,5 +1,6 @@
 import BackLink from 'components/BackLink/BackLink';
 import { Box } from 'components/Box';
+import { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { StyledLink } from './CardMovieInfo.styled';
 
@@ -50,7 +51,9 @@ const CardMovieInfo = ({
           </StyledLink>
         </Box>
       </Box>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
