@@ -1,6 +1,6 @@
 import API from 'service/API.tmDB';
 import { useState, useEffect } from 'react';
-import {StyledGallery} from './MovieGallery.styled';
+import { StyledGallery } from './MovieGallery.styled';
 import MovieGalleryItem from 'components/MovieGalleryItem.jsx/MovieGalleryItem';
 import Loader from 'components/Loader/Loader';
 
@@ -25,18 +25,20 @@ const MovieGallery = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <StyledGallery>
-        {movieOptions.map(({ id, original_title, poster_path }) => {
-          return (
-            <MovieGalleryItem
-              key={id}
-              title={original_title}
-              id={id}
-              poster={poster_path}
-            />
-          );
-        })}
-      </StyledGallery>
+      {movieOptions.length > 0 && (
+        <StyledGallery>
+          {movieOptions.map(({ id, original_title, poster_path }) => {
+            return (
+              <MovieGalleryItem
+                key={id}
+                title={original_title}
+                id={id}
+                poster={poster_path}
+              />
+            );
+          })}
+        </StyledGallery>
+      )}
     </>
   );
 };
