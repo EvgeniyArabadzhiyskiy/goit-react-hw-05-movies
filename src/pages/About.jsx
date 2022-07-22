@@ -1,39 +1,17 @@
-import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
+// import { useParams } from 'react-router-dom';
 
 const About = () => {
-  return (
-    <main>
-      <h1>About Us</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus
-        laborum amet ab cumque sit nihil dolore modi error repudiandae
-        perspiciatis atque voluptas corrupti, doloribus ex maiores quam magni
-        mollitia illum dolor quis alias in sequi quod. Sunt ex numquam hic
-        asperiores facere natus sapiente cum neque laudantium quam, expedita
-        voluptates atque quia aspernatur saepe illo, rem quasi praesentium
-        aliquid sed inventore obcaecati veniam? Nisi magnam vero, dolore
-        praesentium totam ducimus similique asperiores culpa, eius amet
-        repudiandae quam ut. Architecto commodi, tempore ut nostrum voluptas
-        dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
-        eaque voluptatibus eveniet error, nulla rem iusto?
-      </p>
-      <ul>
-        <li>
-          <Link to="mission">Read about our mission</Link>
-        </li>
-        <li>
-          <Link to="team">Get to know the team</Link>
-        </li>
-        <li>
-          <Link to="reviews">Go through the reviews</Link>
-        </li>
-      </ul>
-      <Suspense fallback={<div>Loading subpage...</div>}>
-        <Outlet />
-      </Suspense>
-    </main>
-  );
-};
+    // const { id } = useParams();
+    // console.log("CastList ~ id", id);
+    return ( <div>
+        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit unde asperiores, placeat iste ea reprehenderit voluptatum consequatur. Necessitatibus autem doloribus quo possimus dignissimos quisquam corrupti, porro eius, delectus nemo eos harum cumque, sunt omnis nihil aliquam non magnam quos nostrum!</h1>
 
+        <Link to="/movie/test">Test</Link>
+        {/* <Link to="reviwers">Reviwers</Link> */}
+        
+        <Outlet />
+    </div> );
+}
+ 
 export default About;
