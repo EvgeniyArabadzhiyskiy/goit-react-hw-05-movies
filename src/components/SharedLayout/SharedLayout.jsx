@@ -3,7 +3,7 @@ import { Box } from '../Box';
 import { Outlet } from 'react-router-dom';
 import { Header, SiteNavLink } from './SharedLayout.styled';
 import Container from 'components/Container';
-import Loader from 'components/Loader/Loader';
+// import Loader from 'components/Loader/Loader';
 
 
 const SharedLayout = () => {
@@ -17,7 +17,7 @@ const SharedLayout = () => {
             <SiteNavLink to="/movie">Movie</SiteNavLink>
           </nav>
         </Header>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={null}>
           <Outlet />
         </Suspense>
       </Box>
