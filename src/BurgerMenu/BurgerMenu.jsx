@@ -14,16 +14,16 @@ const BurgerMenu = () => {
     setmMenuOpen(state.isOpen);
   };
 
-  //   const disabledBurger = () => {
-  //     const screenWidth = window.screen.width;
-  //     const disabledBurgericon = screenWidth > 468 || menuOpen === true;
-  //     return disabledBurgericon ? false : null;
-  //   };
+    const disabledBurger = () => {
+      const screenWidth = window.screen.width;
+      const disabledBurgericon = screenWidth > 468 || menuOpen === true;
+      return disabledBurgericon ? false : null;
+    };
 
   return (
     <Menu
       right
-      //   customBurgerIcon={disabledBurger()}
+        customBurgerIcon={disabledBurger()}
       styles={stylesMune}
       isOpen={menuOpen}
       onStateChange={state => handleStateChange(state)}
