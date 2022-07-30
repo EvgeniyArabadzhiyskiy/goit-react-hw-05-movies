@@ -4,9 +4,9 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = 'api_key=d8b0ad5d4fb786d62f1125fa68e28b99';
 
 const API = {
-  async fetchTrendingMovies() {
-    const response = await axios(`${BASE_URL}/trending/movie/day?${API_KEY}`);
-    return response.data.results;
+  async fetchTrendingMovies(page) {
+    const response = await axios(`${BASE_URL}/trending/movie/day?${API_KEY}&page=${page}`);
+    return response.data;
   },
 
   async fetchMovieById(movieId) {
