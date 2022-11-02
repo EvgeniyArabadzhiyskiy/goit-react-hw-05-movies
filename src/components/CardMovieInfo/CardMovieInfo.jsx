@@ -25,7 +25,7 @@ const CardMovieInfo = ({
 
   */
                                            
-  const backLinkHref = INNER_FROM ?? FROM;
+  const backLinkHref = INNER_FROM || FROM || '/';
 
   const releaseDate = release_date.slice(0, 4);
   const getMovieGenres = genres.map(({ name }) => name).join(' ');
