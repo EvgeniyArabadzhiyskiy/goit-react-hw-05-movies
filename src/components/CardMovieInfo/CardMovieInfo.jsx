@@ -14,15 +14,25 @@ const CardMovieInfo = ({
   },
 }) => {
   const location = useLocation();
+  const FROM = location.state?.from;
+  const INNER_FROM = location.state?.from.state?.from;
 
-  const backLink = location.state?.from ?? '/';
+  /*
+  Не возвращал BackLinc  из второго уровня вложенной сcылки
+  Cast И  Reviwers на страницу с поиском фильмов когда было так:
+
+  const backLinkHref = FROM ?? '/'; 
+
+  */
+                                           
+  const backLinkHref = INNER_FROM ?? FROM;
 
   const releaseDate = release_date.slice(0, 4);
   const getMovieGenres = genres.map(({ name }) => name).join(' ');
 
   return (
     <>
-      <BackLink to={backLink}>Back</BackLink>
+      <BackLink to={backLinkHref}>Back</BackLink>
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <div>
           <h1>
